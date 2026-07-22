@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Khalid Aanaoui - Premium Digital Business Card</title>
+  
+  <!-- SEO Optimization Meta Tags -->
+  <meta name="description" content="Luxury digital business card of Khalid Aanaoui featuring bilingual Arabic/English layouts, dark/light modes, premium glassmorphic UI, and direct contact saving." />
+  <meta name="keywords" content="Khalid Aanaoui, Digital Business Card, Luxury Business Card, Business Card, خالد أعناوي, بطاقة رقمية" />
+  <meta name="author" content="Khalid Aanaoui" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Khalid Aanaoui - Premium Digital Card" />
+  <meta property="og:description" content="Luxury digital business card with bilingual Arabic/English layouts, dark/light modes, premium glassmorphism." />
+  <meta property="og:image" content="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='100' fill='%23111827'/><path d='M120 320 L256 160 L392 320 Z' fill='none' stroke='%23D4AF37' stroke-width='24' stroke-linejoin='round'/><circle cx='256' cy='256' r='40' fill='%23D4AF37'/></svg>" />
+  
+  <!-- PWA Manifest & App configuration -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#111827" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Khalid A." />
+
+  <!-- Google Fonts Preconnect & stylesheet link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Favicon (Clean Golden SVG emblem) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23111827'/><circle cx='50' cy='50' r='20' fill='none' stroke='%23D4AF37' stroke-width='4'/><circle cx='50' cy='50' r='8' fill='%23D4AF37'/></svg>" />
+
+  <!-- Tailwind CSS CDN (v3 for robust real-time stylesheet compiling with no build steps) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              DEFAULT: '#D4AF37',
+              light: '#FFF1BE',
+              dark: '#AA7C11',
+              shimmer: '#f7ebd3'
+            },
+            premiumBlue: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0070f3',
+              900: '#0c2e5a',
+              navy: '#0b0f19'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'Cairo', 'sans-serif'],
+            cairo: ['Cairo', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif']
+          },
+          animation: {
+            'spin-slow': 'spin 12s linear infinite',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="min-h-screen w-full overflow-x-hidden flex flex-col items-center justify-between relative bg-[#0b0f19] dark:bg-[#0b0f19] text-gray-100 transition-colors duration-500">
+
+  <!-- Background Animated Glow Orbs -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- 1. Animated Loading Screen -->
+  <div id="loading-screen" class="fixed inset-0 bg-[#07090e] z-50 flex flex-col items-center justify-center transition-opacity duration-500 ease-out">
+    <div class="flex flex-col items-center gap-6">
+      <div class="relative flex items-center justify-center">
+        <!-- Outer Golden Loader Spinner -->
+        <div class="w-32 h-32 rounded-full border-t-2 border-b-2 border-[#D4AF37] animate-spin"></div>
+        <div class="absolute">
+          <!-- Static Gold Emblem in Loader -->
+          <svg viewBox="0 0 500 400" fill="none" class="w-24 h-auto logo-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="loadGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFF1BE" />
+                <stop offset="30%" stop-color="#D4AF37" />
+                <stop offset="70%" stop-color="#AA7C11" />
+                <stop offset="100%" stop-color="#F3E5AB" />
+              </linearGradient>
+            </defs>
+            <path d="M250,140 C230,140 215,115 220,85 C225,50 250,30 270,40 C285,48 290,70 280,85 C275,93 268,98 266,105 L260,140" fill="none" stroke="url(#loadGold)" stroke-width="14" stroke-linecap="round" />
+            <path d="M100,240 C100,240 102,230 115,225 C135,218 200,165 240,143 C246,140 254,140 260,143 C300,165 365,218 385,225 L400,240 Z" fill="url(#loadGold)" />
+            <circle cx="250" cy="200" r="34" fill="#07090e" stroke="url(#loadGold)" stroke-width="3.5" />
+          </svg>
+        </div>
+      </div>
+      <div id="loading-subtitle" class="text-amber-100/70 font-mono tracking-widest uppercase text-[10px] mt-4" data-i18n="luxuryEdition">
+        L U X U R Y   E D I T I O N
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Header Control Area (Bilingual / Theme Toggles) -->
+  <header class="w-full max-w-md px-6 pt-6 flex justify-between items-center z-10">
+    <!-- Language Switcher Button -->
+    <button id="btn-lang-toggle" class="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold border border-white/10 dark:border-white/10 bg-white/5 dark:bg-white/5 text-gray-200 hover:bg-white/10 hover:border-white/20 transition-all cursor-pointer touch-btn shadow-md backdrop-blur-md">
+      <svg class="w-3.5 h-3.5 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+      </svg>
+      <span>العربية</span>
+    </button>
+
+    <!-- Dark / Light Mode Toggle Button -->
+    <button id="btn-theme-toggle" class="p-2.5 rounded-full border border-white/10 dark:border-white/10 bg-white/5 dark:bg-white/5 text-amber-400 hover:bg-white/10 transition-all cursor-pointer touch-btn shadow-md backdrop-blur-md" title="Toggle Theme">
+      <svg class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+      </svg>
+    </button>
+  </header>
+
+  <!-- 3. Main Glassmorphic Container Card -->
+  <main class="w-full max-w-md px-4 py-8 flex-grow flex items-center justify-center z-10">
+    <div class="w-full rounded-[2.5rem] overflow-hidden glass-container relative shadow-2xl reveal stagger-1">
+      
+      <!-- Luxury Metallic Top Border -->
+      <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 via-[#D4AF37] to-amber-500 opacity-80"></div>
+
+      <!-- 3A. Header Section (Logo, Name, Connect Label) -->
+      <div class="flex flex-col items-center text-center pt-11 pb-6 px-6">
+        <!-- Glowing Ring behind Logo -->
+        <div class="relative mb-6">
+          <div class="absolute inset-0 rounded-full bg-[#D4AF37]/10 blur-xl filter scale-125 animate-pulse"></div>
+          
+          <!-- Branded Vector Logo (Wooden/Gold Hanger) -->
+          <svg viewBox="0 0 500 400" fill="none" class="w-48 h-auto logo-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Metallic Gold Gradients -->
+              <linearGradient id="luxuryGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFF1BE" />
+                <stop offset="35%" stop-color="#D4AF37" />
+                <stop offset="65%" stop-color="#AA7C11" />
+                <stop offset="100%" stop-color="#F3E5AB" />
+              </linearGradient>
+              
+              <filter id="vectorGlow" x="-10%" y="-10%" width="120%" height="120%">
+                <feGaussianBlur stdDeviation="8" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+
+            <!-- Hanger Hook -->
+            <path
+              d="M250,140 C230,140 215,115 220,85 C225,50 250,30 270,40 C285,48 290,70 280,85 C275,93 268,98 266,105 L260,140"
+              fill="none"
+              stroke="url(#luxuryGold)"
+              stroke-width="14"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <!-- Main Triangular Body -->
+            <path
+              d="M100,240 C100,240 102,230 115,225 C135,218 200,165 240,143 C246,140 254,140 260,143 C300,165 365,218 385,225 C398,230 400,240 400,240 C400,240 370,250 340,250 C290,250 270,246 250,246 C230,246 210,250 160,250 C130,250 100,240 100,240 Z"
+              fill="url(#luxuryGold)"
+              stroke="#916a0c"
+              stroke-width="1.5"
+            />
+
+            <!-- Central Calligraphy Circle -->
+            <circle
+              cx="250"
+              cy="200"
+              r="34"
+              fill="#0b0f19"
+              stroke="url(#luxuryGold)"
+              stroke-width="3.5"
+              filter="url(#vectorGlow)"
+            />
+            
+            <!-- Calligraphy Text inside emblem -->
+            <text
+              x="250"
+              y="210"
+              font-family="Georgia, 'Times New Roman', serif"
+              font-size="24"
+              font-weight="bold"
+              font-style="italic"
+              fill="url(#luxuryGold)"
+              text-anchor="middle"
+              letter-spacing="-1"
+            >
+              KA
+            </text>
+
+            <!-- Horizontal Pants Bar -->
+            <path
+              d="M150,270 L350,270"
+              stroke="url(#luxuryGold)"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+
+            <!-- Left Rod Spiral Hook -->
+            <path
+              d="M152,250 C150,250 148,260 148,272 C148,285 158,290 162,284 C166,278 158,272 154,272"
+              fill="none"
+              stroke="url(#luxuryGold)"
+              stroke-width="6"
+              stroke-linecap="round"
+            />
+
+            <!-- Right Rod Spiral Hook -->
+            <path
+              d="M348,250 C350,250 352,260 352,272 C352,285 342,290 338,284 C334,278 342,272 346,272"
+              fill="none"
+              stroke="url(#luxuryGold)"
+              stroke-width="6"
+              stroke-linecap="round"
+            />
+
+            <!-- Branding Label Engravings -->
+            <text
+              x="250"
+              y="335"
+              font-family="'Playfair Display', Georgia, serif"
+              font-size="30"
+              font-weight="400"
+              font-style="italic"
+              fill="url(#luxuryGold)"
+              text-anchor="middle"
+              letter-spacing="1"
+            >
+              KhaliD Aanaoui
+            </text>
+
+            <text
+              x="250"
+              y="375"
+              font-family="'Cairo', sans-serif"
+              font-size="22"
+              font-weight="700"
+              fill="#F3E5AB"
+              text-anchor="middle"
+            >
+              خالد أعناوي
+            </text>
+          </svg>
+        </div>
+
+        <!-- Premium Connecting Tag -->
+        <span class="text-[10px] font-mono tracking-[0.25em] uppercase px-3.5 py-1 rounded-full border border-amber-500/20 dark:border-amber-500/20 bg-amber-500/5 text-amber-500 dark:text-amber-400 mb-3.5" data-i18n="connectTitle">
+          Digital Identity
+        </span>
+
+        <!-- Display Name -->
+        <h1 class="text-3xl font-extrabold tracking-tight mb-2 flex items-center justify-center">
+          <span class="bg-gradient-to-r from-[#D4AF37] via-amber-200 to-[#AA7C11] bg-clip-text text-transparent" data-i18n="title">
+            Khalid Aanaoui
+          </span>
+        </h1>
+
+        <!-- Premium Subtitle -->
+        <p class="text-sm tracking-wide font-medium text-gray-400 dark:text-gray-400" data-i18n="subtitle">
+          Premium Digital Business Card
+        </p>
+      </div>
+
+      <!-- 3B. Quick Callout Icons Bar (4 key links) -->
+      <div class="px-6 pb-6 reveal stagger-2">
+        <h2 class="text-xs font-semibold tracking-wider uppercase mb-3 text-gray-500 dark:text-gray-500" data-i18n="quickActions">
+          Quick Actions
+        </h2>
+        
+        <div class="grid grid-cols-4 gap-3">
+          <!-- Call Link -->
+          <a href="tel:+212722303254" id="action-call" class="flex flex-col items-center justify-center p-3.5 rounded-2xl glass-element border text-blue-400 dark:text-blue-400 hover:border-blue-500/40 hover:bg-blue-950/20 shadow-sm touch-btn ripple-btn">
+            <svg class="w-5 h-5 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span class="text-[10px] font-bold uppercase tracking-wider" data-i18n="call">Call</span>
+          </a>
+
+          <!-- WhatsApp Link -->
+          <a href="https://wa.me/212722303254" target="_blank" rel="noopener noreferrer" id="action-whatsapp" class="flex flex-col items-center justify-center p-3.5 rounded-2xl glass-element border text-emerald-400 dark:text-emerald-400 hover:border-emerald-500/40 hover:bg-emerald-950/20 shadow-sm touch-btn ripple-btn">
+            <svg class="w-5 h-5 mb-1.5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            <span class="text-[10px] font-bold uppercase tracking-wider" data-i18n="whatsapp">WhatsApp</span>
+          </a>
+
+          <!-- Email Link -->
+          <a href="mailto:Aanaoui.khalid@gmail.com" id="action-email" class="flex flex-col items-center justify-center p-3.5 rounded-2xl glass-element border text-amber-400 dark:text-amber-400 hover:border-amber-500/40 hover:bg-amber-950/20 shadow-sm touch-btn ripple-btn">
+            <svg class="w-5 h-5 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span class="text-[10px] font-bold uppercase tracking-wider" data-i18n="email">Email</span>
+          </a>
+
+          <!-- Google Maps Link -->
+          <a href="https://maps.app.goo.gl/Wa3wbnkc8ujpmdGU7?g_st=ic" target="_blank" rel="noopener noreferrer" id="action-location" class="flex flex-col items-center justify-center p-3.5 rounded-2xl glass-element border text-sky-400 dark:text-sky-400 hover:border-sky-500/40 hover:bg-sky-950/20 shadow-sm touch-btn ripple-btn">
+            <svg class="w-5 h-5 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span class="text-[10px] font-bold uppercase tracking-wider" data-i18n="location">Location</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3C. Detailed Contact Cards Section (Interactive copies) -->
+      <div class="px-6 pb-6 flex flex-col gap-3.5 reveal stagger-3">
+        <!-- Phone copy field -->
+        <div class="p-4 rounded-2xl border border-white/5 dark:border-white/5 bg-slate-900/40 dark:bg-slate-900/40 flex items-center justify-between transition-all hover:border-[#D4AF37]/30">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 rounded-xl bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37]">
+              <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[10px] font-medium tracking-wide uppercase text-gray-500 dark:text-gray-500" data-i18n="phoneLabel">
+                Phone
+              </span>
+              <a href="tel:+212722303254" class="text-sm font-semibold tracking-wide hover:underline text-inherit font-mono">+212722303254</a>
+            </div>
+          </div>
+          <button id="btn-copy-phone" class="p-2 rounded-xl hover:bg-white/5 text-gray-400 hover:text-white transition-all cursor-pointer touch-btn" title="Copy Phone Number">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Email copy field -->
+        <div class="p-4 rounded-2xl border border-white/5 dark:border-white/5 bg-slate-900/40 dark:bg-slate-900/40 flex items-center justify-between transition-all hover:border-[#D4AF37]/30">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 rounded-xl bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37]">
+              <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[10px] font-medium tracking-wide uppercase text-gray-500 dark:text-gray-500" data-i18n="emailLabel">
+                Email
+              </span>
+              <a href="mailto:Aanaoui.khalid@gmail.com" class="text-sm font-semibold hover:underline text-inherit break-all font-mono">Aanaoui.khalid@gmail.com</a>
+            </div>
+          </div>
+          <button id="btn-copy-email" class="p-2 rounded-xl hover:bg-white/5 text-gray-400 hover:text-white transition-all cursor-pointer touch-btn" title="Copy Email Address">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Google Maps field -->
+        <div class="p-4 rounded-2xl border border-white/5 dark:border-white/5 bg-slate-900/40 dark:bg-slate-900/40 flex items-center justify-between transition-all hover:border-[#D4AF37]/30">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 rounded-xl bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37]">
+              <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[10px] font-medium tracking-wide uppercase text-gray-500 dark:text-gray-500" data-i18n="mapsLabel">
+                Business Location
+              </span>
+              <a href="https://maps.app.goo.gl/Wa3wbnkc8ujpmdGU7?g_st=ic" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold hover:underline text-inherit flex items-center gap-1" data-i18n="viewLocationBtn">
+                View Business Location
+              </a>
+            </div>
+          </div>
+          <a href="https://maps.app.goo.gl/Wa3wbnkc8ujpmdGU7?g_st=ic" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl hover:bg-white/5 text-gray-400 hover:text-white transition-all touch-btn" title="Open in Maps">
+            <svg class="w-5 h-5 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3D. Primary Action: Save Contact (VCF) -->
+      <div class="px-6 pb-6 flex flex-col gap-3.5 reveal stagger-4">
+        <!-- Save Contact Button (Highly Styled Shimmering Gold Button) -->
+        <button id="btn-save-contact" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-[#D4AF37] via-[#FFF1BE] to-[#AA7C11] text-slate-950 font-bold text-sm tracking-wide shadow-lg shadow-amber-500/10 flex items-center justify-center gap-2.5 cursor-pointer touch-btn shimmer-btn ripple-btn gold-glow-hover">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          <span data-i18n="saveContact">Save Contact</span>
+        </button>
+
+        <!-- Secondary split actions: Share Card & Show QR -->
+        <div class="grid grid-cols-2 gap-3.5">
+          <!-- Share card -->
+          <button id="btn-share-card" class="py-3.5 px-4 rounded-2xl font-bold text-xs tracking-wide border border-white/10 dark:border-white/10 bg-white/5 dark:bg-white/5 hover:bg-white/10 text-white flex items-center justify-center gap-2 cursor-pointer touch-btn ripple-btn">
+            <svg class="w-4 h-4 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742l4.636-2.318a3 3 0 10-.642-1.284L7.904 9.458a3 3 0 100 5.084l4.773 2.386a3 3 0 10.642-1.284l-4.636-2.318z" />
+            </svg>
+            <span data-i18n="shareCard">Share Card</span>
+          </button>
+
+          <!-- QR code opener -->
+          <button id="btn-show-qr" class="py-3.5 px-4 rounded-2xl font-bold text-xs tracking-wide border border-white/10 dark:border-white/10 bg-white/5 dark:bg-white/5 hover:bg-white/10 text-white flex items-center justify-center gap-2 cursor-pointer touch-btn ripple-btn">
+            <svg class="w-4 h-4 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v1m6 11h2m-6 0h-2v4m0-16v.01M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+            </svg>
+            <span data-i18n="showQr">Show QR Code</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3E. Social Media Matrix (Instagram & Facebook Grid) -->
+      <div class="px-6 pb-11 reveal stagger-4">
+        <h2 class="text-xs font-semibold tracking-wider uppercase mb-4 text-gray-500 dark:text-gray-500" data-i18n="socialNetworks">
+          Social Networks
+        </h2>
+        
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Instagram Link -->
+          <a href="https://www.instagram.com/khalid.aanaoui?igsh=MXdiZHloN2tvbHV3Yg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" id="link-instagram" class="p-4 rounded-2xl border border-white/5 dark:border-white/5 bg-[#121824]/50 dark:bg-[#121824]/50 flex flex-col gap-3.5 transition-all hover:border-pink-500/30 hover:bg-gradient-to-br hover:from-pink-950/10 hover:to-slate-950/40 touch-btn">
+            <div class="flex items-center justify-between">
+              <div class="p-2 rounded-xl bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white">
+                <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+              </div>
+              <svg class="w-3.5 h-3.5 text-gray-600 dark:text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xs font-bold" data-i18n="instagram">Instagram</span>
+              <span class="text-[10px] text-gray-500 dark:text-gray-500">@khalid.aanaoui</span>
+            </div>
+          </a>
+
+          <!-- Facebook Link -->
+          <a href="https://www.facebook.com/share/1ExSyNcKZX/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" id="link-facebook" class="p-4 rounded-2xl border border-white/5 dark:border-white/5 bg-[#121824]/50 dark:bg-[#121824]/50 flex flex-col gap-3.5 transition-all hover:border-blue-500/30 hover:bg-gradient-to-br hover:from-blue-950/10 hover:to-slate-950/40 touch-btn">
+            <div class="flex items-center justify-between">
+              <div class="p-2 rounded-xl bg-blue-600 text-white">
+                <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </div>
+              <svg class="w-3.5 h-3.5 text-gray-600 dark:text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xs font-bold" data-i18n="facebook">Facebook</span>
+              <span class="text-[10px] text-gray-500 dark:text-gray-500">Khalid Aanaoui</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 4. Elegant Footer Signature -->
+  <footer class="w-full max-w-md px-6 py-6 text-center z-10">
+    <p class="text-[10px] tracking-wider uppercase font-mono text-gray-600 dark:text-gray-600">
+      &copy; 2026 <span data-i18n="title">Khalid Aanaoui</span>. All Rights Reserved.
+    </p>
+  </footer>
+
+  <!-- 5. Floating Copy/Share Success Toasts -->
+  <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transform translate-y-4 transition-all duration-300">
+    <div class="bg-slate-900/90 dark:bg-slate-950/90 text-white border border-[#D4AF37]/30 px-5 py-3 rounded-2xl shadow-2xl backdrop-blur-md flex items-center gap-2.5 max-w-sm">
+      <div class="p-1 rounded-full bg-[#D4AF37]/15 text-[#D4AF37]">
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <span id="toast-message" class="text-xs font-medium tracking-wide">Copied!</span>
+    </div>
+  </div>
+
+  <!-- 6. Scannable QR Code Overlay Modal -->
+  <div id="qr-modal" class="fixed inset-0 z-40 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+    <!-- Close trigger on click background -->
+    <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm" id="qr-close-bg"></div>
+    
+    <!-- Modal frame -->
+    <div class="bg-slate-900/95 dark:bg-slate-950/95 border border-[#D4AF37]/20 rounded-[2rem] p-8 w-full max-w-sm relative z-10 shadow-2xl text-center glass-container transform scale-95 transition-transform duration-300" id="qr-modal-content">
+      <!-- Close button overlay -->
+      <button id="btn-close-qr" class="absolute top-4 right-4 p-2 rounded-full hover:bg-white/5 text-gray-400 hover:text-white transition-colors cursor-pointer touch-btn" title="Close">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      
+      <!-- Headings -->
+      <h3 class="text-lg font-bold bg-gradient-to-r from-[#D4AF37] to-amber-200 bg-clip-text text-transparent mb-2" data-i18n="showQr">
+        QR Code
+      </h3>
+      <p class="text-xs text-gray-400 mb-6 px-4" data-i18n="scanExplanation">
+        Scan this QR code with any smartphone camera to view and save my digital card instantly.
+      </p>
+      
+      <!-- Generated Image Element -->
+      <div class="relative inline-block p-4 bg-white rounded-2xl shadow-xl mb-6">
+        <img id="qr-image" src="" alt="Dynamic QR Code" class="w-48 h-48 block" />
+      </div>
+      
+      <!-- Actions inside QR Modal -->
+      <button id="btn-copy-link" class="w-full py-3 px-6 rounded-xl border border-white/10 hover:bg-white/5 text-white font-bold text-xs tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer touch-btn ripple-btn">
+        <svg class="w-4 h-4 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742l4.636-2.318a3 3 0 10-.642-1.284L7.904 9.458a3 3 0 100 5.084l4.773 2.386a3 3 0 10.642-1.284l-4.636-2.318z" />
+        </svg>
+        <span data-i18n="shareCard">Share Card</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>

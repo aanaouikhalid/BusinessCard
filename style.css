@@ -1,0 +1,277 @@
+/* -------------------------------------------------------------
+ * PREMIUM DIGITAL BUSINESS CARD STYLES - KHALID AANAOUI
+ * Modern Luxury Glassmorphism & Custom Fluid Animations
+ * ------------------------------------------------------------- */
+
+/* Custom Font Import Fallback (Tailwind CDN will also load these) */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Dynamic Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  font-family: 'Poppins', 'Cairo', sans-serif;
+}
+
+/* ----------------- Background Animated Glow Orbs ----------------- */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.28;
+  transition: background-color 0.6s ease, opacity 0.6s ease;
+  pointer-events: none;
+}
+
+/* Orb 1: Luxury Metallic Gold */
+.orb-1 {
+  background: #D4AF37;
+  width: 26rem;
+  height: 26rem;
+  top: -10rem;
+  left: -10rem;
+  animation: float-orb-1 16s ease-in-out infinite;
+}
+
+/* Orb 2: Royal Premium Blue */
+.orb-2 {
+  background: #0070f3;
+  width: 22rem;
+  height: 22rem;
+  top: 35%;
+  right: -8rem;
+  animation: float-orb-2 19s ease-in-out infinite;
+}
+
+/* Orb 3: Deep Warm Gold Highlight */
+.orb-3 {
+  background: #AA7C11;
+  width: 24rem;
+  height: 24rem;
+  bottom: -10rem;
+  left: 20%;
+  animation: float-orb-3 14s ease-in-out infinite;
+}
+
+/* Adapt orbs for Light Mode */
+html.light .orb-1 {
+  background: #f1c40f;
+  opacity: 0.18;
+}
+html.light .orb-2 {
+  background: #3498db;
+  opacity: 0.15;
+}
+html.light .orb-3 {
+  background: #e67e22;
+  opacity: 0.12;
+}
+
+/* Float Animations */
+@keyframes float-orb-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(45px, -60px) scale(1.15);
+  }
+  66% {
+    transform: translate(-25px, 40px) scale(0.9);
+  }
+}
+
+@keyframes float-orb-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-50px, 50px) scale(0.85);
+  }
+  66% {
+    transform: translate(35px, -35px) scale(1.1);
+  }
+}
+
+@keyframes float-orb-3 {
+  0%, 100% {
+    transform: translate(30px, -40px) scale(0.92);
+  }
+  50% {
+    transform: translate(-30px, 35px) scale(1.08);
+  }
+}
+
+/* Subtle Matrix Grid Pattern overlay */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-size: 30px 30px;
+  background-image: linear-gradient(to right, #808080 1px, transparent 1px),
+                    linear-gradient(to bottom, #808080 1px, transparent 1px);
+  pointer-events: none;
+}
+html.light .grid-overlay {
+  opacity: 0.035;
+  background-image: linear-gradient(to right, #000000 1px, transparent 1px),
+                    linear-gradient(to bottom, #000000 1px, transparent 1px);
+}
+
+/* ----------------- Glassmorphic Premium Cards ----------------- */
+.glass-container {
+  background: rgba(11, 15, 25, 0.75);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, background-color 0.5s ease;
+}
+
+html.light .glass-container {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 25px 50px -12px rgba(100, 116, 139, 0.15);
+}
+
+.glass-container:hover {
+  border-color: rgba(212, 175, 55, 0.25);
+}
+
+/* Glassmorphism elements for quick links */
+.glass-element {
+  background: rgba(30, 41, 59, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s ease, 
+              background-color 0.3s ease;
+}
+html.light .glass-element {
+  background: rgba(241, 245, 249, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+/* ----------------- Tactile Micro-Animations ----------------- */
+.touch-btn {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.touch-btn:active {
+  transform: scale(0.96) !important;
+}
+
+/* ----------------- Pure JS Custom Ripple Effects ----------------- */
+.ripple-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.32);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  animation: ripple-sweep 0.65s cubic-bezier(0.1, 0.8, 0.3, 1);
+}
+
+@keyframes ripple-sweep {
+  to {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+
+/* ----------------- Shimmer Sweeping Glare ----------------- */
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: none;
+}
+
+.shimmer-btn:hover::after {
+  left: 150%;
+  transition: left 1.5s ease-in-out;
+}
+
+/* ----------------- Scroll Reveal Animation System ----------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger reveals */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+
+/* ----------------- Custom Logo Adaptations ----------------- */
+.logo-svg {
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+.logo-svg:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 20px 30px rgba(212, 175, 55, 0.25));
+}
+
+/* ----------------- Custom Arabic Typography Corrections ----------------- */
+[dir="rtl"] {
+  letter-spacing: 0 !important;
+}
+
+[dir="rtl"] .font-sans {
+  font-family: 'Cairo', sans-serif !important;
+}
+
+/* Prevent text breaking of Arabic characters */
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] p, [dir="rtl"] span, [dir="rtl"] button, [dir="rtl"] a {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* ----------------- Custom Glow Accessories ----------------- */
+.gold-glow-hover:hover {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* ----------------- SEO and Accessibility Optimization ----------------- */
+button, a {
+  outline: none;
+}
+button:focus-visible, a:focus-visible {
+  ring: 2px solid #D4AF37;
+  ring-offset: 2px;
+}
